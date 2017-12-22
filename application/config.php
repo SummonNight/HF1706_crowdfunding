@@ -19,7 +19,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -43,7 +43,7 @@ return [
     // 是否开启多语言
     'lang_switch_on'         => false,
     // 默认全局过滤方法 用逗号分隔多个
-    'default_filter'         => '',
+    'default_filter'         => 'htmlspecialchars,addslashes',
     // 默认语言
     'default_lang'           => 'zh-cn',
     // 应用类库后缀
@@ -60,9 +60,9 @@ return [
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
-    'default_controller'     => 'Index',
+    'default_controller'     => 'link',
     // 默认操作名
-    'default_action'         => 'index',
+    'default_action'         => 'loginpage',
     // 默认验证器
     'default_validate'       => '',
     // 默认的空控制器名
@@ -236,4 +236,15 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //验证码
+    'captcha'  => [
+        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyz',
+        'fontSize' => 20,
+        'useCurve' => false,
+        'imageH'   => 40,
+        'imageW'   => 160,
+        'length'   => 4,
+        'reset'    => true
+    ]
 ];
